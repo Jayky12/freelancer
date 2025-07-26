@@ -1,0 +1,37 @@
+<ion-header [translucent]="true" >
+  <ion-toolbar >
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title ></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+ <div *ngIf="service">
+  <ion-card>
+      <img src="assets/img/graphic_design.jpg" alt="">
+      <ion-card-header>
+          <ion-card-title>{{service.service_name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content >
+          <p>{{service.description}}</p>
+      </ion-card-content>
+  </ion-card>
+
+  <ion-card color="light">
+      <ion-card-header>
+          <ion-card-title>ราคา</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+          <ul>
+              <li>{{service.price}} บาท</li>
+          </ul>
+      </ion-card-content>
+  </ion-card>
+  <ion-button (click)="addBooking()" expand="full" color="success">
+      <ion-icon slot="start" name="cart"></ion-icon>
+      จองบริการ
+  </ion-button>
+</div>
+</ion-content>

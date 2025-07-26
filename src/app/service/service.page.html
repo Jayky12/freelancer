@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" *ngFor="let item of service">
+        <ion-card (click)="goToBooking(item.service_id)">
+          <ion-item lines="none">
+            <ion-thumbnail slot="start">
+              <img src="assets/img/graphic_design.jpg" alt="บริการ">
+            </ion-thumbnail>
+            <ion-label>
+              <h2>{{item.service_name}}</h2>
+              <p class="price">ราคา <span>฿ {{item.price}} บาท</span></p>
+            </ion-label>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+

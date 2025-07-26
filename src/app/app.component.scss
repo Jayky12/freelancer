@@ -1,0 +1,19 @@
+ion-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: var(--ion-color-primary);
+  color: white;
+  ion-button {
+    color: white;
+    align-items: center;
+  }
+  ion-icon {
+    color: white;
+
+  }
+  ion-toolbar {
+    --background: #115493;
+    --color: white;
+  }
+}

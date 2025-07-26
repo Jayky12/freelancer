@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>เข้าสู่ระบบ</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true" class="ion-padding">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>เข้าสู่ระบบ</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <form (ngSubmit)="login()">
+          <ion-item>
+            <ion-label position="floating">ชื่อผู้ใช้ หรือ อีเมล</ion-label>
+            <ion-input type="text" [(ngModel)]="user_name" name="user_name" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">รหัสผ่าน</ion-label>
+            <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+          </ion-item>
+
+          <ion-button expand="full" type="submit">เข้าสู่ระบบ</ion-button>
+        </form>
+
+        <ion-text color="danger" *ngIf="errorMessage">
+          <p>{{ errorMessage }}</p>
+        </ion-text>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
